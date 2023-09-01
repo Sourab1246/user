@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}PGS{% endblock %}</title>
+    <!-- Include your CSS links and other head elements here -->
+</head>
+
+<body>
+    <header>
+        <h1><b>PGS</b></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'user_logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'user_login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ current_year }} Your Website</p>
+    </footer>
+</body>
+
+</html>

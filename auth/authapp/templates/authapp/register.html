@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    {% extends 'authapp/base.html' %}
+    <!-- Assuming you have a base template -->
+
+    {% block content %}
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'user_login' %}">Login</a></p>
+    {% endblock %}
+
+
+</body>
+
+</html>

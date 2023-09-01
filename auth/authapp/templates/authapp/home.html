@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homeb </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    {% extends 'base.html' %}
+    <!-- Assuming you have a base template -->
+
+    {% block content %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>You are logged in.</p>
+    <a href="{% url 'user_logout' %}">Logout</a> {% endblock %}
+
+
+</body>
+
+</html>
